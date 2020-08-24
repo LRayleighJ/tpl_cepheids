@@ -2,10 +2,10 @@
 
 ## 问题背景
 
+**变星**指的是从地球上观察其亮度有起伏变化的恒星。**造父变星**是一种非常明亮的变星, 其亮度会随时间进行周期性变化（如下图）。根据造父变星的周光关系（Period-luminosity relation），可以进一步测量变星所在星云、星团距地球的距离。
+
 OGLE（Optical Gravitational Lensing Experiment，光学引力透镜实验）是由波兰华沙大学主导的大型巡天项目，主要目标是通过引力透镜来寻找暗物质。
 目前，OGLE 定期对来自麦哲伦星云、银河系核球和圆盘以及其他区域的约10亿颗恒星进行亮度观测，其最重要的成果之一就是收集了大量变星的光度数据，并形成了包含超过40万个天体的变星目录。这些数据对观测天体物理学的许多领域作出了重大贡献。
-
-**变星**指的是从地球上观察其亮度有起伏变化的恒星。**造父变星**是一种非常明亮的变星, 其亮度会随时间进行周期性变化（如下图）。根据造父变星的周光关系（Period-luminosity relation），可以进一步测量变星所在星云、星团距地球的距离。
 
 ![HV 5558 = OGLE-LMC-CEP-0728, R.A.=05:02:11.34 Dec=-70:20:04.8](http://ogle.astrouw.edu.pl/atlas/lcurves/OGLE-LMC-CEP-0728.gif)![HV 974 = OGLE-LMC-CEP-2066, R.A.=05:27:55.00 Dec=-69:48:03.9](http://ogle.astrouw.edu.pl/atlas/lcurves/OGLE-LMC-CEP-2066.gif)![HV 2791 = OGLE-LMC-CEP-2979, R.A.=05:42:16.62 Dec=-70:36:12.1](http://ogle.astrouw.edu.pl/atlas/lcurves/OGLE-LMC-CEP-2979.gif)
 
@@ -43,7 +43,7 @@ OGLE（Optical Gravitational Lensing Experiment，光学引力透镜实验）是
 | `plot_lightcurve.py` |      |
 | `preluminosity.py`   |      |
 | `add_noise.py`       |      |
-| plot_data.py         |      |
+| `plot_data.py`       |      |
 | `simu_telescope.py`  |      |
 
 
@@ -81,11 +81,20 @@ OGLE（Optical Gravitational Lensing Experiment，光学引力透镜实验）是
 
 #### `simu_telescope.py`
 
-假设巡天望远镜能够同时看到这三个造父变星并正对变星所在平面，尝试生成一个简单动画来模拟望远镜观测造父变星的亮度变化。首先需要读取`cepheid_info.csv` 获得三个造父变星的天球坐标，适当变换后可以得到变星所在平面三个造父变星的相对位置（不对绝对位置和距离做要求），并按照相对位置将变星放入直角坐标系中。可以通过颜色或者图标大小来表征造父变星的亮度。利用`realdata.csv`中 magnitude 随时间变化的数据，得到一系列不同时间下各造父变星的星等图像，依次顺序显示这些图像便得到动画。将生成的动画存为`simu_telescope.gif`。
+假设巡天望远镜能够同时看到这三个造父变星并正对变星所在平面，尝试生成一个简单动画来模拟望远镜观测造父变星的亮度变化。首先需要读取`cepheid_info.csv` 获得三个造父变星的天球坐标，适当变换后可以得到变星所在平面三个造父变星的相对位置（不对绝对位置和距离做要求），并按照相对位置将变星放入直角坐标系中。可以通过颜色或者图标大小来表征造父变星的亮度。利用`realdata.csv`中 magnitude 随时间变化的数据，得到一系列不同时间下各造父变星的星等图像，顺序显示这些图像便得到动画。将生成的动画存为`simu_telescope.gif`。
 
 > 提示：尝试使用 matplotlib.animation
 
 ### 提高要求
 
-## 作业要求（非功能部分）
+“基本要求” 中给出拟合的造父变星光变曲线的类型为“经典造父变星 Fundamental-mode”。事实上由天文观测数据给出的造父变星的类型有很多，除了经典造父变星（Classical Cepheids）外，还有星族Ⅱ造父变星（Type II Cepheids）和反常造父变星（Anomalous Cepheids）等等。而光变曲线变化模式除了 Fundamental-mode 外，还有 First-overtone、Second-overtone等，甚至为多种模式的叠加。
 
+![OGLE-LMC-CEP-0832, R.A.=05:03:58.24 Dec=-69:25:38.2](http://ogle.astrouw.edu.pl/atlas/lcurves/OGLE-LMC-CEP-0832.gif)
+
+1. 自行调研 Classical Cepheids 的 Fundamental-mode、First-overtone 等内容，从 [OGLE Collection of Variable Stars](http://ogledb.astrouw.edu.pl/~ogle/OCVS/index.php) 中选择一个 Classical Cepheids 模式为 First-overtone（1O）的数据，默认 Target 为LMC（Large Magellanic Cloud），要求光变周期（P_1）与 “基本要求” 中给出的三个经典造父变星的光变周期不同，并在报告中注明选择的数据 ID （如 “OGLE-LMC-CEP-xxxx”），注意选择 I-band 的 photometry file。
+2. 采用适当的方法处理所选数据，得到一条光滑的光变曲线，并绘制出来（在1~2个光变周期内）。
+3. 选择 “基本要求” 中给出的其中一条 Fundamental-mode 的光变曲线（在报告中注明编号），并结合所选 First-overtone 的光变曲线，按照观测间隔采样并加入噪声，最后生成 F/1O multi-mode 的模拟数据。
+4. 将生成的模拟数据分别挪到原光变曲线的两个光变周期内，分别绘制出两张散点分布图并进行比较。
+
+## 作业要求（非功能部分）
+非功能部分的要求详见大作业公告，此部分占 20 分。
