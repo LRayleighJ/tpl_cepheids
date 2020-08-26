@@ -87,14 +87,12 @@ OGLE（Optical Gravitational Lensing Experiment，光学引力透镜实验）是
 
 ### 提高要求
 
-“基本要求” 中给出拟合的造父变星光变曲线的类型为“经典造父变星 Fundamental-mode”。事实上由天文观测数据给出的造父变星的类型有很多，除了经典造父变星（Classical Cepheids）外，还有星族Ⅱ造父变星（Type II Cepheids）和反常造父变星（Anomalous Cepheids）等等。而光变曲线变化模式除了 Fundamental-mode 外，还有 First-overtone、Second-overtone等，甚至为多种模式的叠加。
+> 提高要求为加分项，至多可加 20 分。你可以自由发挥。
 
-![OGLE-LMC-CEP-0832, R.A.=05:03:58.24 Dec=-69:25:38.2](http://ogle.astrouw.edu.pl/atlas/lcurves/OGLE-LMC-CEP-0832.gif)
+自行调研相关资料，提出唯象模型给出造父变星的光变曲线，根据完成情况酌情加分。
 
-1. 自行调研 Classical Cepheids 的 Fundamental-mode、First-overtone 等内容，从 [OGLE Collection of Variable Stars](http://ogledb.astrouw.edu.pl/~ogle/OCVS/index.php) 中选择一个 Classical Cepheids 模式为 First-overtone（1O）的数据，默认 Target 为LMC（Large Magellanic Cloud），要求光变周期（P_1）与 “基本要求” 中给出的三个经典造父变星的光变周期不同，并在报告中注明选择的数据 ID （如 “OGLE-LMC-CEP-xxxx”），注意选择 I-band 的 photometry file。
-2. 采用适当的方法处理所选数据，得到一条光滑的光变曲线，并绘制出来（在1~2个光变周期内）。
-3. 选择 “基本要求” 中给出的其中一条 Fundamental-mode 的光变曲线（在报告中注明编号），并结合所选 First-overtone 的光变曲线，按照观测间隔采样并加入噪声，最后生成 F/1O multi-mode 的模拟数据。
-4. 将生成的模拟数据分别挪到原光变曲线的两个光变周期内，分别绘制出两张散点分布图并进行比较。
+1. 从第一性原理出发定性分析光变曲线的变化；
+2. 解出光变曲线方程，并与 OGLE 的观测数据比较（观测数据可参考 [OGLE Collection of Variable Stars](http://ogledb.astrouw.edu.pl/~ogle/OCVS/)）。
 
 ## 作业要求（非功能部分）
 非功能部分的要求详见大作业公告，此部分占 20 分。
