@@ -1,5 +1,7 @@
 # 大作业选题：OGLE 造父变星光度数据
 
+提示：如果你无法渲染其中的公式，请阅读 README.pdf， 两者内容相同。
+
 ## 问题背景
 
 **变星**指的是从地球上观察其亮度有起伏变化的恒星。**造父变星**是一种非常明亮的变星, 其亮度会随时间进行周期性变化（如下图）。根据造父变星的周光关系（Period-luminosity relation），可以进一步测量变星所在星云、星团距地球的距离。
@@ -40,11 +42,11 @@ OGLE（Optical Gravitational Lensing Experiment，光学引力透镜实验）是
 
 | 任务（程序名）       | 分数 |
 | -------------------- | ---- |
-| `plot_lightcurve.py` |      |
-| `preluminosity.py`   |      |
-| `add_noise.py`       |      |
-| `plot_data.py`       |      |
-| `simu_telescope.py`  |      |
+| `plot_lightcurve.py` |  20  |
+| `preluminosity.py`   |  20  |
+| `add_noise.py`       |  10  |
+| `plot_data.py`       |  10  |
+| `simu_telescope.py`  |  20  |
 
 
 
@@ -87,7 +89,7 @@ OGLE（Optical Gravitational Lensing Experiment，光学引力透镜实验）是
 
 ### 提高要求
 
-> 提高要求为加分项，至多可加 20 分。你可以自由发挥。
+> 提高要求为加分项，至多可加 10 分。你可以自由发挥。
 
 自行调研相关资料，提出唯象模型给出造父变星的光变曲线，根据完成情况酌情加分。
 
