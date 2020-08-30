@@ -10,15 +10,15 @@ idealdata.csv: data/cepheid_info.csv data/observation_time.csv data/fit_paramete
 	python3 preluminosity.py $^ $@
 
 # 加入抽样生成的噪声, 得到模拟数据
-realdata.csv: data/idealdata.csv data/gauss_std.csv
+realdata.csv: idealdata.csv data/gauss_std.csv
 	python3 add_noise.py $^ $@
 
 # 绘制原始数据散点图
-plotdata.png: data/realdata.csv
+plotdata.png: realdata.csv
 	python3 plot_data.py $^ $@
 
 # 生成用来变星亮度变化的小动画 
-simu_telescope.gif: data/realdata.csv data/cepheid_info.csv
+simu_telescope.gif: realdata.csv data/cepheid_info.csv
 	python3 simu_telescope.py $^ $@
 
 # Delete partial files when the processes are killed.
